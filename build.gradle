@@ -45,7 +45,7 @@ micronaut {
 }
 
 tasks.register('stage') {
-    dependsOn['build', 'clean']
-    build.mustRunAfter clean
+    dependsOn(["build", "clean"])
+    mustRunAfter("clean")
 }
 
