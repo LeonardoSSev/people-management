@@ -1,7 +1,12 @@
 micronaut:
   application:
     name: peopleManagement
-netty:
+datasources:
   default:
-    allocator:
-      max-order: 3
+    url: jdbc:h2:mem:devDb;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+    schema-generate: CREATE_DROP
+    dialect: H2
+jpa.default.properties.hibernate.hbm2ddl.auto: update
